@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/search" class="link-back">Back</a>
+
+
+  <h1 class="heading-xlarge">Search results</h1>
+<h2 class="heading-large">
+{{data['ULN']}}
+</h2>
+
+<h3 class="heading-large">Hi {{data['last-name']}}</h3>
+
+
+
+  <h2 class="heading-large">Search again</h2>
+  <div class="form group">
+    <label class="form-label" for="ULN">Unique learner number (ULN)</label>
+    <input class="form-control" id="ULN" name="ULN" type="text">
+  </div>
+
+  <a class="button" href="#" role="button">Search</a>
+
+
+
+  <h2 class="heading-large">Select apprentice</h2>
+  <p>5 results found</p>
+
+
+
+
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+
+        <h3 class="task-list-section">
+          <span class="task-list-section-number">1. </span>
+          <a href="/outcome">John Smith</a>
+        </h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+              Tailoring
+          </li>
+        </ul>
+
+        <h3 class="task-list-section">
+          <span class="task-list-section-number">2. </span>
+          <a href="/outcome">Rachel Smith</a>
+        </h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+              Butchery
+          </li>
+        </ul>
+        <h3 class="task-list-section">
+          <span class="task-list-section-number">3. </span>
+          <a href="/outcome">James Smith</a>
+        </h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+              Heating Engineer
+          </li>
+        </ul>
+      </div>
+    </div>
+	</div>
+
+
+
+
+
+
+
+
+
+</main>
+
+{% endblock %}

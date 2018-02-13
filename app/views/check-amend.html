@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/outcome" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Check the assessment details
+      </h1>
+
+      <div class="info-summary">
+          <h3 class="heading-medium">Please check these details carefully</h3>
+          <p>The details below will be printed on the certificate. Reprints for mistakes may incur a charge.</p>
+      </div>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Personal details
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+        <div>
+          <dt class="cya-question">
+            Name
+          </dt>
+          <dd class="cya-answer">
+            John Smith
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change<span class="visually-hidden">Name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            Date of birth
+          </dt>
+          <dd class="cya-answer">
+            01/01/2001
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change<span class="visually-hidden">Standard</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+
+        <h2 class="heading-medium">
+          Course details
+        </h2>
+
+        <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dt class="cya-question">
+              Standard
+            </dt>
+            <dd class="cya-answer">
+              Tailoring
+            </dd>
+            <dd class="cya-change">
+              <a href="#">
+                Change<span class="visually-hidden">Name</span>
+              </a>
+            </dd>
+          </div>
+
+        <div>
+          <dt class="cya-question">
+            Course completion date
+          </dt>
+          <dd class="cya-answer">
+            15/02/2018
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change<span class="visually-hidden">Course completion date</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="heading-medium">
+        Employer details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-short">
+        <div>
+          <dt class="cya-question">
+            Contact name
+          </dt>
+          <dd class="cya-answer">
+            Sarah Williams
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change<span class="visually-hidden">Name</span>
+            </a>
+          </dd>
+        </div>
+
+      <div>
+        <dt class="cya-question">
+          Job title
+        </dt>
+        <dd class="cya-answer">
+          Master Tailor
+        </dd>
+        <dd class="cya-change">
+          <a href="#">
+            Change<span class="visually-hidden">Course completion date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt class="cya-question">
+          Employer's address
+        </dt>
+        <dd class="cya-answer">
+          Stitch and Weave<br />
+          72 Guild Street<br />
+          London<br />
+          SE23 6FH
+        </dd>
+        <dd class="cya-change">
+          <a href="#">
+            Change<span class="visually-hidden">Course completion date</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+
+      <h2 class="heading-medium">Now send your application</h2>
+
+      <p class="text">
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <div class="form-group">
+        <a href="confirmation-page" class="button">Accept and record assessment</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
