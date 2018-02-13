@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% set serviceName = '' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="https://www.gov.uk">Home</a></li>
+    </ol>
+  </div>
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-xlarge">Your feedback</h1>
+      <p>Thank you for sending your feedback</p>
+      <form action="/search">
+            <div class="form-group">
+              <input type="submit" class="button" id="button-search" value="Return to search">
+            </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

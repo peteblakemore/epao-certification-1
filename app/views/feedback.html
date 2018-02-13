@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% set serviceName = '' %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="breadcrumbs">
+		<ol>
+			<li>
+				<a href="https://www.gov.uk">Home</a>
+			</li>
+		</ol>
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-xlarge">Give feedback</h1>
+			<h2 class="heading-large">Overall, how did you feel about the service you received today?</h2>
+			<form action="/feedback-thanks">
+				<fieldset>
+					<div class="multiple-choice">
+						<input id="radio-1" name="radio-group" type="radio" value="Very satisfied"> <label for="radio-1">Very satisfied</label>
+					</div>
+					<div class="multiple-choice">
+						<input id="radio-1" name="radio-group" type="radio" value="Satisfied"> <label for="radio-1">Satisfied</label>
+					</div>
+					<div class="multiple-choice">
+						<input id="radio-1" name="radio-group" type="radio" value="Neither satisfied or dissatisfied"> <label for="radio-1">Neither satisfied or dissatisfied</label>
+					</div>
+					<div class="multiple-choice">
+						<input id="radio-1" name="radio-group" type="radio" value="Dissatisfied"> <label for="radio-1">Dissatisfied</label>
+					</div>
+					<div class="multiple-choice">
+						<input id="radio-1" name="radio-group" type="radio" value="Very dissatisfied"> <label for="radio-1">Very dissatisfied</label>
+					</div>
+				</fieldset>
+				<h2 class="heading-large">How could we improve this service?</h2>
+				<textarea class="form-control form-control-3-4" id="textarea" name="other-feedback" rows="4"></textarea>
+				<p>(Limit is 1200 characters)</p>
+				<p>Please don't include any personal or financial information, for example your National Insurance or credit card numbers.</p>
+				<div class="form-group">
+					<input class="button" id="button-search" type="submit" value="Send feedback">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
