@@ -168,6 +168,8 @@ $warning-colour:$orange;
 .sfa-govuk-box-highlight {
     padding-left:0.5em;
     padding-right:0.5em;
-}                
+}
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+@import 'tabs.scss';
