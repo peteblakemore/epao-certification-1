@@ -7,24 +7,66 @@
 {% block content %}
 
 <main id="content" role="main">
-	<div class="grid-row">
-		<div class="column-two-thirds">
 			<a class="link-back" href="/search">Back</a>
 			<h1 class="heading-xlarge">Search results</h1>
 			<h2 class="heading-large">Search again</h2>
 
-      <form action="/search-results">
-        <div class="form-group">
-          <label class="form-label" for="ULN">Unique learner number (ULN)</label>
-          <input class="form-control" id="ULN" type="text" name="ULN">
-        </div>
-        <div class="form-group">
-          <input type="submit" class="button" id="button-search" value="Search">
-        </div>
-      </form>
+      <div id="tabs-container">
+          <ul class="tabs-menu">
+              <li class="current"><a href="#tab-1">ULN</a></li>
+              <li class=""><a href="#tab-2">Last name and date of birth</a></li>
+          </ul>
+          <div id="tab-1" class="tab-content" style="">
+            <form action="/search-results">
+            <div class="form-group">
+              <label class="form-label" for="ULN">Unique learner number (ULN)</label>
+              <input class="form-control" id="ULN" type="text" name="ULN">
+            </div>
+            <input type="submit" class="button" id="button-search" value="Search">
+          </form>
+          </div>
+
+
+          <div id="tab-2" class="tab-content" style="display: none;">
+            <form action="/search-results">
+              <div class="form-group">
+                <label class="form-label" for="ULN">Last name</label>
+                <input class="form-control" id="last-name" type="text" name="last-name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ULN">Date of birth
+                  <span class="form-hint">
+                    For example, 31 3 1980
+                  </span>
+                </label>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label>
+                    <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label>
+                    <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
+
+                  <div class="form-group form-group-year">
+                    <label for="dob-year">Year</label>
+                    <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                  </div>
+                </div>
+              </div>
+            <input type="submit" class="button" id="button-search" value="Search">
+          </form>
+          </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
 
       <h2 class="heading-large">Select apprentice</h2>
-			<p>5 results found</p>
+			<p>3 results found</p>
 
       <div class="grid-row">
 				<div class="column-two-thirds column-minimum">
