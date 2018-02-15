@@ -16,15 +16,52 @@
       </h1>
       <div class="info-summary">
           <h3 class="heading-medium">Only record successful assessments</h3>
-          <p>You don't need to record failed assessments. If an apprentice has failed, they'll have to be re-assessed.</p>
+          <p>You don't need to record failed assessments. Please search for the apprentice again once they have passed.</p>
       </div>
 
       <form>
-    		<div class="form-group">
-          <label class="form-label" for="grade">Grade</label>
-          <input class="form-control" id="grade" type="text" name="grade">
-    		</div>
-    	</form>
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Pass">
+              <label for="example-contact-by-email">Pass</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-phone">
+              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="Credit">
+              <label for="example-contact-by-phone">Credit</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Merit">
+              <label for="example-contact-by-email">Merit</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-phone">
+              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="Distinction">
+              <label for="example-contact-by-phone">Distinction</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Pass with excellence">
+              <label for="example-contact-by-email">Pass with excellence</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-phone">
+              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="Not applicable">
+              <label for="example-contact-by-phone">Not applicable</label>
+            </div>
+
+          </fieldset>
+        </div>
+      </form>
+
+
+
+
+
+
 
       <details role="group">
         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Information about grades</span></summary>
