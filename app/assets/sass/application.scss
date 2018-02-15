@@ -171,58 +171,6 @@ $warning-colour:$orange;
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-.selectable {
-	font-family: fantasy;
-	display: block;
-	position: relative;
-	background: #F0F0F0;
-	padding: 12px 14px 12px 46px;
-	margin: 0 0 1em 0;
-	overflow: hidden;
-	cursor: pointer
-}
-
-label.selectable {
-	display: block;
-	position: relative;
-	background: #F0F0F0;
-	padding: 12px 14px 12px 46px;
-	margin: 0 0 1em 0;
-	overflow: hidden;
-	cursor: pointer
-}
-div.invalid label.selectable {
-	outline: solid 4px #df3034
-}
-label.selectable input {
-	position: absolute;
-	left: 14px;
-	top: 0.65em;
-	margin-right: 10px
-}
-label.selectable .visuallyhidden {
-	line-height: 0
-}
-@media (min-width: 641px) {
-	label.selectable {
-		float: left;
-		clear: left;
-		line-height: 140%;
-		margin-right: 1em
-	}
-	label.selectable input {
-		margin-bottom: 10px
-	}
-	label.selected {
-		border: 1px solid #555;
-		background: #fff;
-		padding: 11px 13px 11px 45px
-	}
-	.selected {
-		border: 1px solid #555;
-		background: #fff;
-		padding: 11px 13px 11px 45px
-	}
 
 @import 'tabs.scss';
 @import 'search-page-layout.scss';
