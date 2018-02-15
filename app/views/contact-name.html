@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Record outcome
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/employer-address" class="link-back">Back</a>
+
+
+      <h1 class="heading-medium">
+        What is the name of the contact at the employer's organisation?
+      </h1>
+
+      <form>
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Contact name</label>
+          <input class="form-control" id="contact-name" type="text" name="contact-name">
+        </div>
+      </form>
+
+      <a class="button" href="/contact-position" role="button">Continue</a>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
