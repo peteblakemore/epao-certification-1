@@ -15,19 +15,30 @@
         When was the apprenticeship completed?
       </h1>
 
-      <form>
-    		<div class="form-group">
-    			<div class="multiple-choice">
-    				<input id="radio-1" name="radio-group" type="radio" value="Pass"> <label for="radio-1">Pass</label>
-    			</div>
-    			<div class="multiple-choice">
-    				<input id="radio-2" name="radio-group" type="radio" value="Merit"> <label for="radio-2">Merit</label>
-    			</div>
-          <div class="multiple-choice">
-    				<input id="radio-3" name="radio-group" type="radio" value="Distinction"> <label for="radio-3">Distinction</label>
-    			</div>
-    		</div>
-    	</form>
+      <form action="/search-results">
+        <div class="form-group">
+            <span class="form-hint">
+              For example, 15 10 2017
+            </span>
+          </label>
+          <div class="form-date">
+            <div class="form-group form-group-day">
+              <label for="dob-day">Day</label>
+              <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="dob-month">Month</label>
+              <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="dob-year">Year</label>
+              <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+          </div>
+        </div>
+    </form>
 
 
       <a class="button" href="/employer-address" role="button">Continue</a>
