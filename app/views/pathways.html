@@ -8,27 +8,35 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-      <a href="/search-results" class="link-back">Back</a>
+      <a href="/grade" class="link-back">Back</a>
 
 
       <h1 class="heading-medium">
-        What were the pathways?
+        Did the apprenticeship have a pathway?
       </h1>
 
-      <form>
-    		<div class="form-group">
-    			<div class="multiple-choice">
-    				<input id="radio-1" name="radio-group" type="radio" value="Pass"> <label for="radio-1">Pass</label>
-    			</div>
-    			<div class="multiple-choice">
-    				<input id="radio-2" name="radio-group" type="radio" value="Merit"> <label for="radio-2">Merit</label>
-    			</div>
-          <div class="multiple-choice">
-    				<input id="radio-3" name="radio-group" type="radio" value="Distinction"> <label for="radio-3">Distinction</label>
-    			</div>
-    		</div>
-    	</form>
 
+      <form>
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+              <label for="example-contact-by-email">Yes</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+              <label class="form-label" for="contact-email">What was the pathway?</label>
+              <input class="form-control" name="contact-email" type="text" id="contact-email">
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-phone">
+              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+              <label for="example-contact-by-phone">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+      </form>
 
       <a class="button" href="/apprenticeship-completion" role="button">Continue</a>
 
