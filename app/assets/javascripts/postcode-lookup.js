@@ -166,4 +166,6 @@ var postcodeLookup = (function() {
   return postcodeLookup;
 })();
 
-new postcodeLookup();
+if (document.querySelector("#postcode-search")) {
+  new postcodeLookup();
+}
