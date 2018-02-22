@@ -8,12 +8,25 @@
 }
 
 .autocomplete-data {
+  // Styling if postcode list pushes content down
+  // ul {
+  //   display: none;
+  //   padding: 0;
+  //   list-style: none;
+
+  // Styling if postcode list covers existing content
+  position: relative;
+  z-index: 10;
   ul {
+    box-sizing: border-box;
     display: none;
-    // border: 2px solid black;
-    // border-top: 0;
+    background: white;
+    opacity: 0.95;
+    border: 2px solid black;
+    top: -2px;
     padding: 0;
     list-style: none;
+    position: absolute;
 
     &.active {
       display: block;
