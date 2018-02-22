@@ -86,11 +86,11 @@ class postcodeLookup {
     //   (input.value = addressArray[index]))
     // });
 
-    document.querySelector('#Address_AddressLine1').value = addressArray[0];
+    document.querySelector('#Address_AddressLine1').value = addressArray[0] || '';
     if (addressArray.length === 4) document.querySelector('#Address_AddressLine2').value = addressArray[1] || '';
     if (addressArray.length === 5) document.querySelector('#Address_AddressLine3').value = addressArray[2] || '';
-    document.querySelector('#Address_AddressLine4').value = addressArray[addressArray.length - 2];
-    document.querySelector('#Address_Postcode').value = addressArray[addressArray.length - 1];
+    document.querySelector('#Address_AddressLine4').value = addressArray[addressArray.length - 2] || '';
+    document.querySelector('#Address_Postcode').value = addressArray[addressArray.length - 1] || '';
   }
 }
 
