@@ -1,0 +1,33 @@
+#address-lookup {
+  display: none;
+}
+
+.js-enabled #address-lookup {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.autocomplete-data {
+  ul {
+    display: none;
+    // border: 2px solid black;
+    // border-top: 0;
+    padding: 0;
+    list-style: none;
+
+    &.active {
+      display: block;
+    }
+
+    li a {
+      display: block;
+      text-decoration: none;
+      padding: 5px;
+      color: #000;
+
+      &:hover {
+        background: #dee0e2;
+      }
+    }
+  }
+}
