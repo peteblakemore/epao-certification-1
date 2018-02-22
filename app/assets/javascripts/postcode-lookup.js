@@ -29,9 +29,9 @@ class postcodeLookup {
   }
 
   findPostcode(event) {
-    this.addressList.innerHTML = '';
-    this.postcodeList.classList.remove('visuallyhidden');
+    this.addressList.classList.remove('active');
     if (!event.target.value.length) return;
+    this.postcodeList.classList.add('active');
 
     fetch(`https://api.postcodes.io/postcodes/${event.target.value}/autocomplete`)
       .then(response => response.json())
@@ -51,24 +51,25 @@ class postcodeLookup {
     } else {
       // typed whole postcode
       this.postcodeInput.value = this.postcodeInput.value.toUpperCase();
-      this.postcodeList.classList.add('visuallyhidden');
+      this.postcodeList.classList.remove('active');
       this.selectAddress(postcodeData.result[0]);
     }
   }
 
   selectPostcode(event) {
-    this.postcodeList.classList.add('visuallyhidden');
+    this.postcodeList.classList.remove('active');
     this.postcodeInput.value = event.target.innerHTML;
     this.selectAddress(event.target.innerHTML);
   }
 
   selectAddress(chosenPostcode) {
+    this.addressList.classList.add('active');
     this.selectedPostcode = chosenPostcode;
     const addressArray = new Array(10).fill();
     const availableAddresses = addressArray.map(
       (address, i) =>
-        `<li><a href="#${i + 2}_orchard_cresent">${i +
-          2} Orchard Cresent, Cheylesmore, Coventry, West Midlands</a></li>`
+        `<li><a href="#${i + 8}_gracemere_cresent">${i +
+          8} Gracemere Cresent, Birmingham</a></li>`
     );
     this.postcodeList.innerHTML = '';
     this.addressList.innerHTML = availableAddresses.join('');
@@ -76,11 +77,20 @@ class postcodeLookup {
   }
 
   populateAddress(event) {
-    this.postcodeList.innerHTML = '';
-    this.addressList.innerHTML = '';
+    this.postcodeList.classList.remove('active');
+    this.addressList.classList.remove('active');
     const addressArray = event.target.innerHTML.split(', ');
     addressArray.push(this.selectedPostcode);
-    this.addressInputs.forEach((input, index) => (input.value = addressArray[index]));
+    console.log(addressArray);
+    // this.addressInputs.forEach((input, index) => {
+    //   (input.value = addressArray[index]))
+    // });
+
+    document.querySelector('#Address_AddressLine1').value = addressArray[0];
+    if (addressArray.length === 4) document.querySelector('#Address_AddressLine2').value = addressArray[1] || '';
+    if (addressArray.length === 5) document.querySelector('#Address_AddressLine3').value = addressArray[2] || '';
+    document.querySelector('#Address_AddressLine4').value = addressArray[addressArray.length - 2];
+    document.querySelector('#Address_Postcode').value = addressArray[addressArray.length - 1];
   }
 }
 
