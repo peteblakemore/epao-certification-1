@@ -11,13 +11,13 @@ class postcodeLookup {
 
     this.selectedPostcode = '';
     
-    this.focusOnAddressLineOne = this.focusOnAddressLineOne.bind(this);
+    // this.focusOnAddressLineOne = this.focusOnAddressLineOne.bind(this);
     this.findPostcode = this.findPostcode.bind(this);
     this.showPostcodes = this.showPostcodes.bind(this);
     this.selectPostcode = this.selectPostcode.bind(this);
     this.selectAddress = this.selectAddress.bind(this);
     this.populateAddress = this.populateAddress.bind(this);
-    // this.togglePostcodeSearch = this.togglePostcodeSearch.bind(this);
+    this.togglePostcodeSearch = this.togglePostcodeSearch.bind(this);
 
     this.addEventListeners();
   }
