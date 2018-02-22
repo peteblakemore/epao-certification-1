@@ -1,0 +1,241 @@
+$header-user-bg: $govuk-blue;
+
+.global-header-bar--white {
+	background-color: scale-color($header-user-bg, $lightness: -30%) !important;
+}
+
+.header-user {
+	background: $header-user-bg;
+	margin-top: -10px;
+	// margin-top: $gutter-half;
+	position: relative;
+	z-index: 1;
+}
+
+.header-user,
+.header-organisation {
+	// border: 1px solid darken($header-user-bg,10%);
+	border-width: 1px 0;
+}
+
+.header-inner {
+	@extend #content;
+	padding: 0;
+	color: $white;
+
+	h1,h2,h3,h4,h5 {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+$light-nav-color: scale-color($header-user-bg, $lightness: 80%);
+
+#header-user--nav {
+	padding: $gutter-half 0;
+
+	.heading-small {
+		.heading-secondary {
+			color: scale-color($header-user-bg, $lightness: 80%);
+			font-weight: normal;
+			font-size: 16px;
+		}
+	}
+
+	a {
+		$nav-link-color: $white;
+		color: $nav-link-color;
+		text-decoration: none;
+		&:hover {
+			color: $nav-link-color;
+			text-decoration: underline;
+		}
+	}
+
+	nav#user-nav {
+
+		> ul {
+			list-style:none;
+			position: relative;
+			margin-top: $gutter-half;
+
+			@include media(tablet) {
+				float: right;
+				margin: 0;
+			}
+
+			li {
+				border-top: 1px solid scale-color($header-user-bg, $lightness: 20%);
+				margin-left: $gutter-two-thirds;
+				padding: $gutter-one-quarter 0;
+				&.current {
+					a {
+						text-decoration: none;
+						color: scale-color($header-user-bg, $lightness: 60%);
+					}
+				}
+				a {
+					$nav-link-color: $white;
+					color: $nav-link-color;
+					text-decoration: underline;
+					&:hover {
+						color: scale-color($header-user-bg, $lightness: 80%);
+						text-decoration: underline;
+					}
+				}
+
+				@include media(tablet) {
+					border: none;
+					display: inline-block;
+					float: left;
+					padding: 0;
+					> a {
+						&.js-toggle {
+							padding-left: 25px;
+						}
+					}
+					ul {
+						display: none;
+					}
+					&.open {
+						position: relative;
+						ul {
+							display: block;
+							position: absolute;
+							width: 250px;
+							top: 100%;
+							right: 0;
+							background: $grey-4;
+							border: 1px solid $light-nav-color;
+							z-index: 100;
+							li {
+								margin: 0 10px;
+								border-bottom: 1px solid $light-nav-color;
+								&:last-child {
+									border: none;
+								}
+								a {
+									padding-left: 0;
+									padding-right: 0;
+								}
+								&.selected a {
+
+									margin-left: 0;
+								}
+							}
+						}
+					}
+					a.menu-open,
+					a.menu-open:focus {
+						background: $grey-4;
+						border: 1px solid $grey-2;
+						border-bottom: none;
+						position: relative;
+						margin-bottom: -1px;
+						z-index: 101;
+					}
+				}
+			}
+		}
+	}
+}
+
+nav.global-nav {
+	@extend %contain-floats;
+	font-size: 14px;
+	@include media(tablet) {
+		font-size: 16px;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		margin-left: -$gutter-half;
+		margin-rightr: -$gutter-half;
+		padding: 0;
+		position: relative;
+		li {
+			display: inline-block;
+			float: left;
+			a {
+				padding: 12px $gutter-half 10px;
+				display: block;
+				position: relative;
+				&:focus {
+					outline: 0;
+				}
+
+			}
+			&.current {
+				a {
+					color: black;
+					text-decoration:none;
+					&:after {
+						content: "";
+						display: block;
+						height: 5px;
+						position: absolute;
+						left: $gutter-half;
+						right: $gutter-half;
+						bottom: -1px;
+						z-index: 1;
+						background: $govuk-blue;
+					}
+				}
+			}
+			&.more-link {
+				a {
+					position: absolute;
+				}
+				@include media(tablet) {
+					display: none;
+				}
+			}
+		}
+	}
+	ul#global-nav-links-secondary {
+		float: none;
+		clear: both;
+		margin-right: -$gutter-half;
+		@include media(tablet) {
+			float: left;
+			clear: none;
+			margin-left: 0;
+		}
+		li {
+			display: block;
+			float: none;
+			border-top: 1px solid $grey-2;
+			@include media(tablet) {
+				float: left;
+				border: none;
+			}
+		}
+	}
+	ul {
+		@include media(desktop) {
+			font-size: 19px;
+		}
+		li.sa-stacker {
+			float: right;
+			ul {
+				display: none;
+			}
+			&.sa-open {
+				ul {
+					display: block;
+					position: absolute;
+					background: white;
+					left: $gutter-half;
+					right: -$gutter-half;
+					border-bottom: 2px solid $grey-2;
+					li {
+						display: block;
+						float: none;
+						border-top: 1px solid $grey-2;
+
+					}
+				}
+			}
+		}
+	}
+}
