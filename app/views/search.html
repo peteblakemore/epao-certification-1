@@ -14,9 +14,9 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-xlarge">Search for an apprentice</h1>
-      <p>Use the search form below to find an apprentice and to record a successful assessment.</p>
+      <p>Use the search to find an apprentice and to record a successful assessment.</p>
 
-      <p>Enter either the last name and date of birth of the apprentice, or a valid unique learner number (ULN).</p>
+      <p>You can search by unique learner number (ULN) or last name and date of birth of apprentice.</p>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
           <li class=""><a href="#tab-2">Last name and date of birth</a></li>
       </ul>
       <div id="tab-1" class="tab-content" style="">
-        <form action="/search-results">
+        <form action="/search-results_no-results">
         <div class="form-group">
           <label class="form-label" for="ULN">Unique learner number (ULN)</label>
           <input class="form-control" id="ULN" type="text" name="ULN">
@@ -38,7 +38,7 @@
 
 
       <div id="tab-2" class="tab-content" style="display: none;">
-        <form action="/search-results_no-results">
+        <form action="/search-results">
           <div class="form-group">
             <label class="form-label" for="ULN">Last name</label>
             <input class="form-control" id="last-name" type="text" name="last-name">
