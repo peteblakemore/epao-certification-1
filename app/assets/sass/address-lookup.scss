@@ -2,7 +2,7 @@
   display: none;
 }
 
-.js-enabled #address-lookup {
+.js-enabled #address-lookup.active {
   display: block;
   margin-bottom: 3px;
 }
@@ -42,5 +42,18 @@
         background: #dee0e2;
       }
     }
+  }
+}
+
+
+
+.autocomplete-data #addressAutocomplete {
+  width: 100%;
+}
+
+// on large screens
+@media (min-width: 641px) {
+  .autocomplete-data #addressAutocomplete {
+    width: auto;
   }
 }

@@ -2,6 +2,7 @@
 
 class postcodeLookup {
   constructor() {
+    this.addressLookup = document.querySelector('#address-lookup');
     this.postcodeInput = document.querySelector('#postcode-search');
     this.postcodeList = document.querySelector('#postcodeAutocomplete');
     this.addressList = document.querySelector('#addressAutocomplete');
@@ -9,23 +10,35 @@ class postcodeLookup {
     this.addressInputs = document.querySelectorAll('.addressInput');
 
     this.selectedPostcode = '';
-
+    
+    this.focusOnAddressLineOne = this.focusOnAddressLineOne.bind(this);
     this.findPostcode = this.findPostcode.bind(this);
     this.showPostcodes = this.showPostcodes.bind(this);
     this.selectPostcode = this.selectPostcode.bind(this);
     this.selectAddress = this.selectAddress.bind(this);
     this.populateAddress = this.populateAddress.bind(this);
+    // this.togglePostcodeSearch = this.togglePostcodeSearch.bind(this);
 
     this.addEventListeners();
   }
 
   addEventListeners() {
     this.postcodeInput.addEventListener('keyup', this.findPostcode);
-    this.enterManuallyLink.addEventListener('click', this.hidePostcodeSearch);
+    this.enterManuallyLink.addEventListener('click', this.togglePostcodeSearch);
   }
 
-  hidePostcodeSearch() {
-    document.querySelector('#address-lookup').innerHTML = '';
+  // focusOnAddressLineOne() {
+  //   document.querySelector('#Address_AddressLine1').focus();
+  // }
+
+  togglePostcodeSearch() {
+    if (this.addressLookup.classList.contains('active')) {
+      this.addressLookup.classList.remove('active');
+      this.enterManuallyLink.innerHTML = 'Search for address by postcode';
+    } else {
+      this.addressLookup.classList.add('active');
+      this.enterManuallyLink.innerHTML = 'Or enter address manually';
+    }
   }
 
   findPostcode(event) {

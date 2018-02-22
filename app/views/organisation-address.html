@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
+
 {% block page_title %}
 	Record outcome
 {% endblock %}
+
 {% block content %}
+
 	<main id="content" role="main">
 		<div class="grid-row">
 			<div class="column-two-thirds">
@@ -13,7 +16,7 @@
 
 				<form action="/contact-name">
 					<fieldset class="sfa-xlarge-bottom-margin sfa-section-bordered">
-						<div class="hide-nojs" id="address-lookup">
+						<div class="active" id="address-lookup">
 							<div class="form-group form-group-compound" id="addressInputWrapper">
 								<label class="form-label-bold" for="postcode-search">Enter your postcode</label>
 								<span aria-live="polite" class="ui-helper-hidden-accessible" role="status"></span>
@@ -21,14 +24,14 @@
 								type="text">
 								<span aria-live="polite" class="visuallyhidden" id="ariaAddressEntered"></span>
 								<div class="autocomplete-data">
-									<ul id="postcodeAutocomplete"></ul>
+									<ul class="form-control-1-3" id="postcodeAutocomplete"></ul>
 									<ul id="addressAutocomplete"></ul>
 								</div>
 							</div>
-							<div class="form-group form-group-compound" id="address-manual">
-								<a class="copy-19" href="#" id="enterAddressManually">Or enter address manually</a>
-							</div>
 						</div>
+								<div class="form-group form-group-compound" id="address-manual">
+									<a class="copy-19" href="#" id="enterAddressManually">Or enter address manually</a>
+								</div>
 						<div id="addressManualWrapper">
 							<div class="address-manual-input sfa-disabled" id="address-details">
 								<div class="form-group-compound address-item form-group">
