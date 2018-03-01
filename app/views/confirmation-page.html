@@ -30,7 +30,33 @@
       <h2 class="heading-medium">What happens next</h2>
       <p>A printed certificate is being prepared and will be posted to the employer.</p>
       <p><a href="/feedback">What did you think of this service?</a> (takes 30 seconds)</p>
-      <p><a href="/search">Search for another apprentice</p>
+
+
+<div>
+  <h2 class="heading-medium">Search for another apprentice</h2>
+  <form action="/confirm-declare">
+    <div class="form-group">
+      <label class="form-label" for="contact-name">ULN</label>
+      <input class="form-control" id="contact-name" type="text" name="contact-name">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="contact-position">Last name</label>
+      <input class="form-control" id="contact-position" type="text" name="contact-position">
+    </div>
+    <details role="group">
+      <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">What is a unique learner number (ULN)?</span></summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+        <p>
+          Each apprentice has a unique learner number (ULN) that is used to identify them. It is ten digits long and contains only numbers.
+        </p>
+      </div>
+    </details>
+    <br>
+    <div class="form-group">
+      <input class="button" id="button-search" type="submit" value="Continue">
+    </div>
+  </form>
+</div>
 
 
     </div>

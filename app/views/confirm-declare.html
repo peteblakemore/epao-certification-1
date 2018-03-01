@@ -12,47 +12,58 @@
 	<a class="link-back" href="/search">Back</a>
 	<div class="grid-row">
 
-    <div class="content-inner slides">
+    <div class="flash-card">
+      <header>
+        <h1 class="heading-large">How to renew your passport online</h1>
+      </header>
       <div class="grid-row">
-        <div class="column-one-third">
-          <figure class="hide-mobile">
-            <img srcset="/assets/1076/govuk-verify-a7d57f55532feda2a43fd2cbb22a49869b477d2383d072510be2f534e25d496d.svg 1x" alt="GOV.UK Verify" src="/assets/1076/govuk-verify-d5c22ad692b0181911125060e9ba208b1ff8778ca5730b24bef30b1a5ab38de9.png">
-          </figure>
-          <figure class="show-mobile">
-            <img srcset="/assets/1076/govuk-verify-horizontal-09254eff45ab1dffcd400dd321e1766e3766aa36dd6ebb7fc4313d750d7b8831.svg 1x" alt="GOV.UK Verify" src="/assets/1076/govuk-verify-horizontal-d379630f9694c5d1b89c52020420a824457ef5fc0e3daae1dd101a226c61ec90.png">
-          </figure>
-        </div>
         <div class="column-two-thirds">
+          <ul class="how-to-renew" data-id="how-to-renew-uk">
+            <li>
+              <span class="circle circle-step circle-white">1</span>
+              <h2 class="heading-medium">Get a digital passport photo</h2>
+              <!-- <p>We'll show you how to get a good passport photo.</p> -->
+            </li>
 
+            <li>
+              <span class="circle circle-step circle-white">2</span>
+              <h2 class="heading-medium">Apply online</h2>
+              <!-- <p>You'll need to check the details in your old passport.</p> -->
+            </li>
 
-  <h1 class="heading-large">Sign in with GOV.UK Verify</h1>
+            <li>
+              <span class="circle circle-step circle-white">3</span>
+              <h2 class="heading-medium">Pay for your new passport online</h2>
+              <!-- <p>A standard passport is £72.50 including special delivery. You'll need a debit or credit card.</p> -->
+            </li>
 
-  <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/grade" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="2IE8UKf9mnz2y8V4WC9ntx7oIDNQrZ9bSRzdUUk4ZcWezb/wl6c1P51vm1rv9WSEMqSWLpicP/0ttaeAnuFrMQ==">
-
-
-
-    <div class="form-group">
-      <fieldset>
-        <div class="multiple-choice"><input required="required" data-msg="Please select an option" piwik_event_tracking="journey_user_type" type="radio" value="true" name="start_form[selection]" id="start_form_selection_true" aria-required="true"> <label for="start_form_selection_true">This is my first time using Verify</label></div>
-        <div class="multiple-choice"><input required="required" data-msg="Please select an option" piwik_event_tracking="journey_user_type" type="radio" value="false" name="start_form[selection]" id="start_form_selection_false" aria-required="true"> <label for="start_form_selection_false">I’ve used Verify before</label></div>
-      </fieldset>
-  </div>
-    <div id="validation-error-message-js"></div>
-
-    <div class="form-group-tight">
-      <div class="actions">
-        <input type="submit" name="commit" value="Continue" class="button" id="next-button">
-      </div>
-    </div>
-  </form>
+            <li>
+              <span class="circle circle-step circle-white">4</span>
+              <h2 class="heading-medium">Send us your old passport</h2>
+              <!-- <p>You need to pay the postage to return your old passport.</p> -->
+            </li>
+          </ul>
+          <div class="form-group" style="margin-top:25px;">
+            <input class="button button-white" type="submit" value="Continue">
+          </div>
+          <details class="details-interruption" role="group">
+            <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+              <span class="summary">I need help with online services</span>
+            </summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <p>You can call the Passport Adviceline and ask for help</p>
+              <p>Telephone: 0300 330 0901<br>
+                Textphone: 0300 330 0808<br>
+                Monday to Friday, 8:00am to 8:00pm<br>
+                Weekends and public holidays, 9:00am to 5:30pm<br>
+                <a href="#">Find out about call charges</a>
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </div>
+
   </div>
-
-
-
-
-
 </main>
 {% endblock %}
