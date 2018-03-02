@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Search results
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/_global_nav.html' %}
+
+<main id="content" role="main">
+	<a class="link-back" href="/search">Back</a>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">The apprentice is enrolled on more than one apprenticeship</h1>
+      <p>Select the standard that you would like to record an assessment for.</p>
+            <form>
+              <div class="form-group">
+                <fieldset>
+                  <ul>
+                    <li>
+                      <p class="bold">Name: David Taylor</h2>
+                    </li>
+                    <li>
+                      <p class="bold">Standard:</h2>
+                    </li>
+                  </ul>
+
+                  <div class="multiple-choice">
+                    <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+                    <label for="radio-1">Apprentice Horticulture Assistant</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+                    <label for="radio-2">Tailoring</label>
+
+                </fieldset>
+              </div>
+            </form>
+          <div class="form-group" style="margin-top:25px;">
+            <a href="/grade" class="button button-white">Start recording assessment</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</main>
+{% endblock %}
