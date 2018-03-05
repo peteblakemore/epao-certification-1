@@ -50,6 +50,7 @@ var postcodeLookup = (function() {
       key: "addEventListeners",
       value: function addEventListeners() {
         this.postcodeInput.addEventListener("keyup", this.findPostcode);
+        this.postcodeInput.addEventListener("paste", this.findPostcode);
         this.enterManuallyLink.addEventListener(
           "click",
           this.focusOnAddressLineOne
@@ -77,17 +78,31 @@ var postcodeLookup = (function() {
         this.addressList.classList.remove("active");
         this.postcodeList.classList.add("active");
 
-        fetch(
-          "https://api.postcodes.io/postcodes/" +
-            event.target.value +
-            "/autocomplete"
-        )
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(postcodeData) {
+        // fetch(
+        //   "https://api.postcodes.io/postcodes/" +
+        //     event.target.value +
+        //     "/autocomplete"
+        // )
+        //   .then(function(response) {
+        //     return response.json();
+        //   })
+        //   .then(function(postcodeData) {
+        //     return _this.showPostcodes(postcodeData);
+        //   });
+
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://api.postcodes.io/postcodes/" + event.target.value + "/autocomplete";
+
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var postcodeData = JSON.parse(this.responseText);
             return _this.showPostcodes(postcodeData);
-          });
+            }
+        };
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
       }
     },
     {
