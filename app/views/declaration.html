@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Declaration page
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/_global_nav.html' %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/check-amend" class="link-back">Back</a>
+
+
+      <h1 class="heading-medium">
+        Declaration
+      </h1>
+
+      <p>By recording this assessment, I confirm the following:</p>
+
+    <ul class="list list-bullet">
+      <li>The apprentice has given their permission for us to apply for certification on their behalf</li>
+      <li>The assessment itself is independent of both the provider and employer</li>
+      <li>The apprentice has satisfied all the requirements of the assessment plan, including the end-point assessment</li>
+      <li>The apprentice has met the minimum duration of the apprenticeship</li>
+      <li>I am content that the apprentice has attained sufficient skills, knowledge and behaviours</li>
+    </ul>
+
+
+
+
+      <a href="confirmation-page" class="button">Accept and record assessment</a>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
