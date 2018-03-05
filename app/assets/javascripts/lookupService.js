@@ -44,12 +44,13 @@
           timeout: 5000,
           success: function(data) {
             $('#postcodeServiceUnavailable').hide();
-            $('#enterAddressManually').hide();
-            $('#addressLoading').show();
-
-            $('#postcode-search').one('blur', function() {
-              $('#enterAddressManually').show();
-              $('#addressLoading').hide();
+            
+            $('#postcode-search').on('blur', function() {
+              if ($('#address-details').hasClass('disabled')) {
+                $('#enterAddressManually').show();
+                $('#addressLoading').hide();
+                $("ul.ui-autocomplete, .ui-widget-content").filter(':hidden').show();
+              }
             });
 
             response(
@@ -137,9 +138,9 @@
       },
       timeout: 5000,
       success: function(data) {
+        $('#addressLoading').hide();
         if (data.Items.length) {
           $('#address-details').removeClass('disabled');
-          $('#addressLoading').hide();
           $('#enterAddressManually').show();
           $('#addressManualWrapper').unbind('click');
           $('#postcode-search').val('');
@@ -192,5 +193,5 @@
       });
   }
 
-  $('#address-details').addClass('disabled');
+    $('#address-details').addClass('disabled');
 })(jQuery);
