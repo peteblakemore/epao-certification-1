@@ -21,17 +21,17 @@
             <label class="form-label" for="contact-name">Company name</label>
             <input class="form-control form-control-3-4" id="contact-name" type="text" name="contact-name">
           </div>
-          <div id="address-lookup" class="hide-nojs">
+          <div id="address-lookup" class="hide-nojs disabled">
             <div class="form-group form-group-compound" id="addressInputWrapper">
               <label for="postcode-search" class="form-label">Enter your postcode or start typing address</label>
-              <input id="postcode-search" type="text" class="form-control" spellcheck="false" autocorrect="off">
+              <input id="postcode-search" type="text" class="form-control" spellcheck="false" autocorrect="off" disabled="disabled" />
               <!-- <a href="#" class="close-postcode-lookup toggle-content">X</a> -->
               <span class="visuallyhidden" id="ariaAddressEntered" aria-live="polite"></span>
             </div>
             <div id="address-manual" class="form-group form-group-compound">
               <a href="#" class="copy-19" id="enterAddressManually">Or enter address manually</a>
               <span class="toggle-content hide-nojs loading-text" id="addressLoading">Loading address...</span>
-              <span style="color: red" id="postcodeServiceUnavailable" class="copy-19 toggle-content hide-nojs text">Service is currently unavailable, please enter address manually</span>
+              <p style="color: red" id="postcodeServiceUnavailable" class="copy-19 toggle-content hide-nojs text">Service is currently unavailable, please enter address manually</p>
             </div>
           </div>
           <div id="addressManualWrapper">

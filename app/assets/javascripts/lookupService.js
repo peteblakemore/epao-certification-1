@@ -8,8 +8,14 @@
 // provides the matching addresses from postcode
 (function($) {
   var searchContext = '',
-    uri = $('form').attr('action'),
-    findAddressVal = $('#postcode-search').val();
+      uri = $('form').attr('action'),
+      findAddressVal = $('#postcode-search').val();
+
+  // enable when service is available
+  $('#address-lookup').removeClass('disabled');
+  $('#postcode-search').prop('disabled', false);
+  // grey out manual input
+  $('#address-details').addClass('disabled');
 
   $('#enterAddressManually').on('click', function(e) {
     e.preventDefault();
@@ -27,16 +33,24 @@
 
   $('#postcode-search').keyup(function() {
     findAddressVal = $(this).val();
+    if(!findAddressVal) {
+      $('#addressLoading').hide();
+      $('#enterAddressManually').show();
+    }
   });
 
   $('#postcode-search')
     .autocomplete({
+      search: function(){
+        $('#addressLoading').show();
+        $('#enterAddressManually').hide();
+      },
       source: function(request, response) {
         $.ajax({
           url: '//services.postcodeanywhere.co.uk/CapturePlus/Interactive/Find/v2.10/json3.ws',
           dataType: 'jsonp',
           data: {
-            key: 'CB54-RM83-DH34-RA18',
+            key: 'JY37-NM56-JA37-WT99',
             country: 'GB',
             searchTerm: request.term,
             lastId: searchContext
@@ -44,15 +58,12 @@
           timeout: 5000,
           success: function(data) {
             $('#postcodeServiceUnavailable').hide();
-            // $('.close-postcode-lookup').show();
-            
-            $('#postcode-search').on('blur', function() {
-              if ($('#address-details').hasClass('disabled')) {
-                $('#enterAddressManually').show();
-                // $('.close-postcode-lookup').hide();
-                $('#addressLoading').hide();
-                $("ul.ui-autocomplete, .ui-widget-content").filter(':hidden').show();
-              }
+            $('#addressLoading').hide();
+            $('#enterAddressManually').show();
+
+            $('#postcode-search').one('blur', function() {
+              $('#enterAddressManually').show();
+              $('#addressLoading').hide();
             });
 
             response(
@@ -67,7 +78,8 @@
           },
           error: function() {
             $('#postcodeServiceUnavailable').show();
-            $('#enterAddressManually').hide();
+            $('#enterAddressManually').show();
+            $('#addressLoading').hide();
             $('#address-details').removeClass('disabled');
           }
         });
@@ -135,14 +147,14 @@
       url: '//services.postcodeanywhere.co.uk/CapturePlus/Interactive/Retrieve/v2.10/json3.ws',
       dataType: 'jsonp',
       data: {
-        key: 'CB54-RM83-DH34-RA18',
+        key: 'JY37-NM56-JA37-WT99',
         id: id
       },
       timeout: 5000,
       success: function(data) {
-        $('#addressLoading').hide();
         if (data.Items.length) {
           $('#address-details').removeClass('disabled');
+          $('#addressLoading').hide();
           $('#enterAddressManually').show();
           $('#addressManualWrapper').unbind('click');
           $('#postcode-search').val('');
@@ -153,7 +165,6 @@
       error: function() {
         $('#postcodeServiceUnavailable').show();
         $('#enterAddressManually').hide();
-        // $('.close-postcode-lookup').hide();
         $('#addressLoading').hide();
         $('#address-details').removeClass('disabled');
       }
@@ -161,7 +172,6 @@
   }
 
   function populateAddress(address) {
-    // $('.close-postcode-lookup').hide();
     if (!$('#Companyname').val()) {
       $('#Companyname').val(address.Company);
     }
@@ -196,12 +206,4 @@
         //console.log("failed");
       });
   }
-
-  // $('.close-postcode-lookup').on('click', function(event) {
-  //   event.preventDefault();
-  //   $('#postcode-search').autocomplete('close')
-  //   $('#postcode-search').val('')
-  // })
-
-  $('#address-details').addClass('disabled');
 })(jQuery);
