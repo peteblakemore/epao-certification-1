@@ -44,10 +44,12 @@
           timeout: 5000,
           success: function(data) {
             $('#postcodeServiceUnavailable').hide();
+            // $('.close-postcode-lookup').show();
             
             $('#postcode-search').on('blur', function() {
               if ($('#address-details').hasClass('disabled')) {
                 $('#enterAddressManually').show();
+                // $('.close-postcode-lookup').hide();
                 $('#addressLoading').hide();
                 $("ul.ui-autocomplete, .ui-widget-content").filter(':hidden').show();
               }
@@ -151,6 +153,7 @@
       error: function() {
         $('#postcodeServiceUnavailable').show();
         $('#enterAddressManually').hide();
+        // $('.close-postcode-lookup').hide();
         $('#addressLoading').hide();
         $('#address-details').removeClass('disabled');
       }
@@ -158,6 +161,7 @@
   }
 
   function populateAddress(address) {
+    // $('.close-postcode-lookup').hide();
     if (!$('#Companyname').val()) {
       $('#Companyname').val(address.Company);
     }
@@ -193,5 +197,11 @@
       });
   }
 
-    $('#address-details').addClass('disabled');
+  // $('.close-postcode-lookup').on('click', function(event) {
+  //   event.preventDefault();
+  //   $('#postcode-search').autocomplete('close')
+  //   $('#postcode-search').val('')
+  // })
+
+  $('#address-details').addClass('disabled');
 })(jQuery);

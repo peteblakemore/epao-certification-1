@@ -9,6 +9,60 @@
   pointer-events: none;
 }
 
+.ui-menu {
+  top: -2px;
+  padding: 0;
+  box-sizing: border-box;
+  border-width: 2px;
+  // border-top: 0;
+}
+
+.ui-autocomplete .ui-menu-item {
+  padding:0;
+}
+
+.ui-menu .ui-menu-item a {
+  padding: 6px 5px;
+}
+
+.ui-menu .ui-menu-item:first-child a {
+  padding-top: 8px;
+}
+
+.ui-menu .ui-menu-item:last-child a {
+  padding-bottom: 5px;
+}
+
+.ui-autocomplete .ui-menu-item {
+  font-size: 16px;
+}
+
+
+@media (min-width: 641px) {
+  .ui-autocomplete .ui-menu-item {
+    font-size: 19px;
+  }
+}
+
+// .ui-menu:focus, .ui-menu .ui-menu-item a:focus, .ui-menu .ui-menu-item:focus {
+//   outline: 3px solid #ffbf47;
+//   outline-offset: 0;
+// }
+
+.close-postcode-lookup {
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  right: 24px;
+  margin-top: 8px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.close-postcode-lookup:visited {
+  color: #0b0c0c;
+}
+
 // #address-lookup {
 //   display: none;
 // }
