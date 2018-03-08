@@ -7,23 +7,34 @@
       <a href="/achievement-date" class="link-back">Back</a>
 
       <h1 class="heading-large">
-        Certificate postage details
+        Where will the certificate be sent?
       </h1>
-      <p>Tell us the employer's details, so we know where to send the certificate.</p>
 
 
       <form>
         <fieldset class="sfa-xlarge-bottom-margin sfa-section-bordered">
-          <legend class="heading-medium">
-            Company details
-          </legend>
+
           <div class="form-group">
-            <label class="form-label" for="contact-name">Company name</label>
+            <label class="form-label" for="contact-name">Name</label>
+            <span class="form-hint">
+              For example, Joanna Smith
+            </span>
+            <input class="form-control" id="contact-name" type="text" name="contact-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-position">Department (optional)</label>
+            <span class="form-hint">
+              For example, Human Resources
+            </span>
+            <input class="form-control" id="contact-position" type="text" name="contact-position">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Employer</label>
             <input class="form-control form-control-3-4" id="contact-name" type="text" name="contact-name">
           </div>
           <div id="address-lookup" class="hide-nojs disabled">
             <div class="form-group form-group-compound" id="addressInputWrapper">
-              <label for="postcode-search" class="form-label">Enter your postcode or start typing address</label>
+              <label for="postcode-search" class="form-label">Enter the employer's postcode or start typing their address</label>
               <input id="postcode-search" type="text" class="form-control" spellcheck="false" autocorrect="off" disabled="disabled" />
               <!-- <a href="#" class="close-postcode-lookup toggle-content">X</a> -->
               <span class="visuallyhidden" id="ariaAddressEntered" aria-live="polite"></span>
@@ -84,22 +95,8 @@
                 type="hidden" value="" />
             </div>
           </div>
-          <legend class="heading-medium">
-            Contact details
-          </legend>
-          <p>Tell us the details of the contact at the employer's company. The individual might be the apprentice's line manager,
-            for example.</p>
-          <div class="form-group">
-            <label class="form-label" for="contact-name">Contact name</label>
-            <input class="form-control" id="contact-name" type="text" name="contact-name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-position">Department</label>
-            <span class="form-hint">
-              For example, Human Resources
-            </span>
-            <input class="form-control" id="contact-position" type="text" name="contact-position">
-          </div>
+
+
         </fieldset>
         <a class="button" href="/check-amend" role="button">Continue</a>
       </form>
